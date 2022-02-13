@@ -11,7 +11,7 @@ export class UserController {
 
     // Listando um usuário
     @Get(':id')
-    findOne(@Param() params) {
-        return `Usuários #${params.id}`
+    findOne(@Param('id') id: string) {
+        return `Usuários #${id}`
     }
 }
