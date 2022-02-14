@@ -11,9 +11,14 @@ import {
   Res,
 } from '@nestjs/common';
 import { response } from 'express';
+import { UsersService } from './users.service';
+
 
 @Controller('user')
 export class UserController {
+  // Construtor
+  constructor(private readonly usersServive: UsersService) {}
+  
   // Lista todos usuários
   @Get()
   findAll(@Res() response) {
